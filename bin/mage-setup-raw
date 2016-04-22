@@ -4,7 +4,7 @@ echo "Initializing setup..."
 cd /srv/www
 
 setup_db () {
-  if [ -z $M2SETUP_DB_HOST ]; then
+  if [ -n $M2SETUP_DB_HOST ]; then
     echo "Running Magento 2 setup script..."
     /usr/local/bin/php -d memory_limit=2G ./bin/magento setup:install \
       --db-host=$M2SETUP_DB_HOST \
